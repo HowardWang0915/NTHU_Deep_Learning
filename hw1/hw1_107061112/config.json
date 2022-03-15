@@ -1,0 +1,28 @@
+{
+    "name": "MNIST-Shallow-Network",
+    
+    "arch": {
+        "type": "Shallow_Network",
+        "args":{}
+    },
+    "data_loader": {
+        "type": "MNISTDataLoader",
+        "args":{
+            "data_dir": "/dataset/MNIST/",
+            "batch_size": 128,
+            "shuffle": true,
+            "val_split": 0.3,
+            "n_workers": 1
+        }
+    },
+    "loss": "cross_entropy",
+    "metrics": [
+        "accuracy"
+    ],
+    "trainer": {
+        "epochs": 100,
+        "save_dir": "saved/",
+        "save_period": 20,
+        "verbosity": 2
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "name": "DL-HW3",
+    "arch": {
+        "type": "Fruit_CNN",
+        "args": {}
+    },
+    "data_loader": {
+        "type": "FruitDataLoader",
+        "args": {
+            "data_dir": "/dataset/Fruit/",
+            "batch_size": 32,
+            "shuffle": true,
+            "val_split": 0.3,
+            "n_workers": 1
+        }
+    },
+    "loss": "cross_entropy",
+    "optimizer": {
+        "type": "SGD",
+        "args": {
+            "lr": 1e-3
+        }
+    },
+    "metrics": [
+        "accuracy"
+    ],
+    "trainer": {
+        "epochs": 40,
+        "save_dir": "saved/",
+        "save_period": 10,
+        "verbosity": 2
+    }
+}
